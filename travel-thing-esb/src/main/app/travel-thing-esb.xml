@@ -13,6 +13,7 @@ http://www.mulesoft.org/schema/mule/travel-thing-amadeus-web-services http://www
     <travel-thing-amadeus-web-services:config-type name="TravelThingAmadeusWebServices" doc:name="TravelThingAmadeusWebServices: Configuration type strategy"/>
     <flow name="travel-thing-esbFlow">
         <http:listener config-ref="HTTP_Listener_8081" path="/tt-esb" doc:name="HTTP"/>
+        <logger level="INFO" doc:name="Logger"/>
         <json:json-to-object-transformer doc:name="JSON to Object"/>
         <travel-thing-amadeus-web-services:air-multi-availability config-ref="TravelThingAmadeusWebServices" doc:name="TravelThingAmadeusWebServices"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
